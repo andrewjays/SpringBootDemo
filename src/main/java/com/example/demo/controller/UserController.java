@@ -152,8 +152,6 @@ public class UserController {
     //@ApiIgnore//使用该注解忽略这个API
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
     public String jsonTest() {
-
-
         return " hi you!";
     }
     @RequestMapping(value = "/hi")
