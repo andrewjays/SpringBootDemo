@@ -13,7 +13,7 @@ import java.util.*;
 /**
  * 签名生产和校验的类
  *
- * @author WuXL
+ * @author zhounan
  * @create 2018-11-21 16:13
  */
 
