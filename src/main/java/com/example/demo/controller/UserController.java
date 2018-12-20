@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 
-
 @RestController
 public class UserController {
 
@@ -154,8 +153,14 @@ public class UserController {
     public String jsonTest() {
         return " hi you!";
     }
+
     @RequestMapping(value = "/hi")
-  public Integer login(){
-     return 0;
-}
+    public Integer login() {
+        return 0;
+    }
+
+    @RequestMapping(value = "/test")
+    public String test() {
+        return "hello";
+    }
 }
