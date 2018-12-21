@@ -62,10 +62,7 @@ public class FdfsTest {
     @Test
     public void testDownload() {
         try {
-            String conf = "classpath:application.properties";
-            if (conf.contains("classpath:")) {
-                conf = conf.replace("classpath:", this.getClass().getResource("/").getPath());
-            }
+
             ClientGlobal.init("D:\\work\\adups\\workspace\\demo\\src\\main\\resources\\application.properties");
 
             TrackerClient tracker = new TrackerClient();
@@ -75,7 +72,7 @@ public class FdfsTest {
             StorageClient storageClient = new StorageClient(trackerServer, storageServer);
             byte[] b = storageClient.download_file("group1", "M00/00/00/ZyjovFwJ2MGAY_9vAAABUtyLJbI408.zip");
             System.out.println(b);
-            IOUtils.write(b, new FileOutputStream("D:/"+UUID.randomUUID().toString()+".zip"));
+            IOUtils.write(b, new FileOutputStream("D:/" + UUID.randomUUID().toString() + ".zip"));
         } catch (Exception e) {
             e.printStackTrace();
         }
