@@ -74,6 +74,7 @@ public class FdfsTest {
             System.out.println(b);
             IOUtils.write(b, new FileOutputStream("D:/" + UUID.randomUUID().toString() + ".zip"));
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }
