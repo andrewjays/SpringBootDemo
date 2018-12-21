@@ -64,7 +64,7 @@ public class FdfsTest {
         try {
 
             ClientGlobal.init("D:\\work\\adups\\workspace\\demo\\src\\main\\resources\\application.properties");
-
+            //ClientGlobal.initByProperties("");
             TrackerClient tracker = new TrackerClient();
             TrackerServer trackerServer = tracker.getConnection();
             StorageServer storageServer = null;
