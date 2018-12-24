@@ -1,13 +1,10 @@
 package com.example.demo;
 
-//import com.github.tobato.fastdfs.domain.StorePath;
-//import com.github.tobato.fastdfs.domain.ThumbImageConfig;
-//import com.github.tobato.fastdfs.service.FastFileStorageClient;
 
 import com.github.tobato.fastdfs.domain.StorePath;
 import com.github.tobato.fastdfs.domain.ThumbImageConfig;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
-import lombok.experimental.var;
+
 import org.apache.commons.io.IOUtils;
 import org.csource.fastdfs.*;
 import org.junit.Test;
