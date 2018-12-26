@@ -19,6 +19,7 @@ public class Demo {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     @Scheduled(cron = " 0/5 * * * * ? ")
     public void timePlan() {
+        logger.info("这是一个测试用例");
         logger.info("现在时间:"+dateFormat.format(new Date()));
     }
 }
