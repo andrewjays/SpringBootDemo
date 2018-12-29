@@ -71,6 +71,8 @@ public class FdfsTest {
             byte[] b = storageClient.download_file("group1", "M00/00/00/ZyjovFwJ2MGAY_9vAAABUtyLJbI408.zip");
             System.out.println(b);
             IOUtils.write(b, new FileOutputStream("D:/" + UUID.randomUUID().toString() + ".zip"));
+
+
         } catch (Exception e) {
 
             e.printStackTrace();
