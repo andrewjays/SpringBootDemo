@@ -31,7 +31,7 @@ public class UserController {
      * @return
      */
     @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
+    @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "Integer", paramType = "path")
     @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
     public ResponseEntity<JsonResult> getUserById(@PathVariable(value = "id") Integer id) {
         JsonResult r = new JsonResult();
@@ -120,7 +120,6 @@ public class UserController {
 
     /**
      * 根据id修改用户信息
-     *
      * @param user
      * @return
      */
@@ -144,11 +143,12 @@ public class UserController {
             r.setStatus("error");
 
             e.printStackTrace();
+
         }
         return ResponseEntity.ok(r);
     }
 
-    //@ApiIgnore//使用该注解忽略这个API
+    //@ApiIgnore
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
     public String jsonTest() {
         return " hi you!";
