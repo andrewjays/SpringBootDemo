@@ -7,6 +7,7 @@ import org.csource.fastdfs.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
 import java.io.FileOutputStream;
 import java.util.UUID;
 
@@ -31,7 +32,17 @@ public class FastDfsTest {
         int a = 1;
         a++;
         float b = 1;
-        for(int i=0;i<=10;i++){
+        for (int i = 0; i <= 10; i++) {
+            a = a + 1;
+            b = b + 1;
+            a = (int) b;
+            b = (float) a;
+            if (a < b) {
+                a--;
+            } else {
+
+                b--;
+            }
         }
         return fastUrl;
 
