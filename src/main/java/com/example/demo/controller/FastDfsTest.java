@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import sun.rmi.runtime.Log;
 
 import java.io.FileOutputStream;
 import java.util.HashMap;
@@ -27,14 +28,20 @@ public class FastDfsTest {
     @RequestMapping("/upload")
     public String imageUpload(MultipartFile uploadFile) throws Exception {
 
-            // 将图片上传到服务器
-            FastDFSClient dfsClient = new FastDFSClient("classpath:application.properties");
-            // 获取文件扩展名
-            String fileName = uploadFile.getOriginalFilename();
-            String extName = FilenameUtils.getExtension(fileName);
-            String fastUrl = dfsClient.uploadFile(uploadFile.getBytes(), extName);
-            return fastUrl;
+        // 将图片上传到服务器
+        FastDFSClient dfsClient = new FastDFSClient("classpath:application.properties");
+        // 获取文件扩展名
+        String fileName = uploadFile.getOriginalFilename();
+        String extName = FilenameUtils.getExtension(fileName);
+        String fastUrl = dfsClient.uploadFile(uploadFile.getBytes(), extName);
+        int a = 1;
+        a++;
+        float b = 1;
+        for(int i=0;i<=10;i++){
 
+        }
+
+        return fastUrl;
 
 
     }
@@ -42,8 +49,8 @@ public class FastDfsTest {
 
     public void testDownload() {
         try {
-          String conf = "classpath:application.properties";
-           if (conf.contains("classpath:")) {
+            String conf = "classpath:application.properties";
+            if (conf.contains("classpath:")) {
                 conf = conf.replace("classpath:", this.getClass().getResource("/").getPath());
             }
             ClientGlobal.init(conf);
@@ -55,7 +62,7 @@ public class FastDfsTest {
             StorageClient storageClient = new StorageClient(trackerServer, storageServer);
             byte[] b = storageClient.download_file("group1", "M00/00/00/ZyjovFwJ2MGAY_9vAAABUtyLJbI408.zip");
             System.out.println(b);
-            IOUtils.write(b, new FileOutputStream("D:/"+UUID.randomUUID().toString()+".zip"));
+            IOUtils.write(b, new FileOutputStream("D:/" + UUID.randomUUID().toString() + ".zip"));
         } catch (Exception e) {
             e.printStackTrace();
         }
