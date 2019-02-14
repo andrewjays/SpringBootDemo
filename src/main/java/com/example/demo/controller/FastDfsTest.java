@@ -17,7 +17,7 @@ import java.util.UUID;
 
 /**
  * @Author:zhounan
- * @Description:
+ * @Description: 分布式文件管理系统
  * @Date: Created in 2018/12/6 16:54
  */
 @RestController
