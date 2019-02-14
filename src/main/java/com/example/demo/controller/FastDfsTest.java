@@ -4,16 +4,10 @@ import com.example.demo.utils.FastDFSClient;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.csource.fastdfs.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import sun.rmi.runtime.Log;
-
 import java.io.FileOutputStream;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -38,11 +32,8 @@ public class FastDfsTest {
         a++;
         float b = 1;
         for(int i=0;i<=10;i++){
-
         }
-
         return fastUrl;
-
 
     }
 
