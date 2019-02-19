@@ -29,21 +29,6 @@ public class FastDfsTest {
         String fileName = uploadFile.getOriginalFilename();
         String extName = FilenameUtils.getExtension(fileName);
         String fastUrl = dfsClient.uploadFile(uploadFile.getBytes(), extName);
-        int a = 1;
-        a++;
-        float b = 1;
-        for (int i = 0; i <= 10; i++) {
-            a = a + 1;
-            b = b + 1;
-            a = (int) b;
-            b = (float) a;
-            if (a < b) {
-                a--;
-            } else {
-
-                b--;
-            }
-        }
         return fastUrl;
 
     }
