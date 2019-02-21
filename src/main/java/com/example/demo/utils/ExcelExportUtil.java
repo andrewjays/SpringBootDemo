@@ -35,7 +35,6 @@ public class ExcelExportUtil {
     CellStyle styleHeader = wb.createCellStyle();//表头样式
     CellStyle styleContent = wb.createCellStyle();//内容样式
 
-
     //文本格式
     CellStyle textStyle = wb.createCellStyle();
     DataFormat format = wb.createDataFormat();
