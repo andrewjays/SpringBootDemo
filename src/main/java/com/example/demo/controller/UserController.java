@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 
@@ -154,9 +157,22 @@ public class UserController {
         return " hi you!";
     }
 
-    @RequestMapping(value = "/hi")
-    public Integer login() {
+    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    public Integer login(HttpServletResponse response) throws Exception{
+        download(response);
+        download1(response);
         return 0;
+    }
+
+    private void download(HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=utf-8");
+        response.getOutputStream().write("hellWorld第一次".getBytes());
+
+    }
+    private void download1(HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;charset=utf-8");
+        response.getOutputStream().write("hellWorld第一次".getBytes());
+
     }
 
     @RequestMapping(value = "/test")
