@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.text.SimpleDateFormat;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
+@RestController
 @Component                //实例化
 @Configurable             //注入bean
 @EnableScheduling
@@ -28,7 +30,7 @@ public class Demo {
     }
 
 
-
+@RequestMapping("/text")
     public void exportVehicleList(String vehicleReq, HttpServletResponse response) {
 
 //        List<VehicleModelListVo> list = vehicleMapper.queryVehicleList(vehicleReq);

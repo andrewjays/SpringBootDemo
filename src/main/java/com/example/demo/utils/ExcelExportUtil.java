@@ -1,6 +1,7 @@
 package com.example.demo.utils;
 
 
+import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -45,7 +46,7 @@ public class ExcelExportUtil {
     //设置表头字体
     fHeader.setFontHeightInPoints((short) 10);
     fHeader.setBold(true);
-    fHeader.setColor(IndexedColors.BLACK.getIndex());
+    fHeader.setColor(IndexedColors.RED.getIndex());
     //设置内容字体
     fContent.setFontHeightInPoints((short) 10);
     fContent.setColor(IndexedColors.BLACK.getIndex());
@@ -59,12 +60,14 @@ public class ExcelExportUtil {
     styleHeader.setBorderTop(BorderStyle.THIN);
     styleHeader.setAlignment(HorizontalAlignment.CENTER);
 
+
     //设置表内容单元格的样式
     styleContent.setFont(fContent);
     styleContent.setBorderBottom(BorderStyle.THIN);
     styleContent.setBorderLeft(BorderStyle.THIN);
     styleContent.setBorderRight(BorderStyle.THIN);
     styleContent.setBorderTop(BorderStyle.THIN);
+
 
     //设置字符串格式
     textStyle.setFont(fContent);
@@ -79,7 +82,9 @@ public class ExcelExportUtil {
       for (int i = 0; i < headers.length; i++) {
         Cell cell = row.createCell(i);
         cell.setCellValue(headers[i]);
+        styleHeader.setFillBackgroundColor(IndexedColors.BLUE.getIndex());
         cell.setCellStyle(styleHeader);
+
       }
     }
     //表数据
