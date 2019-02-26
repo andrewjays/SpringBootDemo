@@ -133,6 +133,18 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.15</version>
         </dependency>
+        <!--aop-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.13</version>
+        </dependency>
+       <!--url监控-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.9</version>
+        </dependency>
     </dependencies>
 
     <build>

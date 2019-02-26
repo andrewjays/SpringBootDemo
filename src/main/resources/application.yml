@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: service-hi
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
 #  zipkin:
 #    base-url: http://localhost:9411
 
@@ -15,3 +18,4 @@ fastdfs:
   tracker-list: # tracker地址
     - 103.40.232.190:22122
     - 103.40.232.189:22122
+

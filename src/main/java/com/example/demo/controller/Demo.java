@@ -27,6 +27,8 @@ public class Demo {
     public void timePlan() {
         logger.info("这是一个测试用例");
         logger.info("现在时间:"+dateFormat.format(new Date()));
+        logger.info("按位与:"+(3&5));
+        logger.info("按位或:"+(3|5));
     }
 
 

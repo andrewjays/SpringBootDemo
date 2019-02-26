@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.fastdfs;
 
 import com.github.tobato.fastdfs.FdfsClientConfig;
 import org.springframework.context.annotation.Configuration;
