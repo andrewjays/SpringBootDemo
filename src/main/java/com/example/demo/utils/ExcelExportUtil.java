@@ -46,7 +46,7 @@ public class ExcelExportUtil {
     //设置表头字体
     fHeader.setFontHeightInPoints((short) 10);
     fHeader.setBold(true);
-    fHeader.setColor(IndexedColors.RED.getIndex());
+    fHeader.setColor(IndexedColors.BLACK.getIndex());
     //设置内容字体
     fContent.setFontHeightInPoints((short) 10);
     fContent.setColor(IndexedColors.BLACK.getIndex());
@@ -82,7 +82,9 @@ public class ExcelExportUtil {
       for (int i = 0; i < headers.length; i++) {
         Cell cell = row.createCell(i);
         cell.setCellValue(headers[i]);
-        styleHeader.setFillBackgroundColor(IndexedColors.BLUE.getIndex());
+        styleHeader.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        styleHeader.setFillForegroundColor(IndexedColors.GREEN.getIndex());
+
         cell.setCellStyle(styleHeader);
 
       }
