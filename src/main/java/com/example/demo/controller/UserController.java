@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 
 
@@ -47,8 +46,6 @@ public class UserController {
             r.setStatus("error");
             e.printStackTrace();
         }
-
-
         return ResponseEntity.ok(r);
     }
 
@@ -91,7 +88,6 @@ public class UserController {
         } catch (Exception e) {
             r.setResult(e.getClass().getName() + ":" + e.getMessage());
             r.setStatus("error");
-
             e.printStackTrace();
         }
         return ResponseEntity.ok(r);
@@ -115,7 +111,6 @@ public class UserController {
         } catch (Exception e) {
             r.setResult(e.getClass().getName() + ":" + e.getMessage());
             r.setStatus("error");
-
             e.printStackTrace();
         }
         return ResponseEntity.ok(r);
@@ -123,6 +118,7 @@ public class UserController {
 
     /**
      * 根据id修改用户信息
+     *
      * @param user
      * @return
      */
@@ -144,9 +140,7 @@ public class UserController {
         } catch (Exception e) {
             r.setResult(e.getClass().getName() + ":" + e.getMessage());
             r.setStatus("error");
-
             e.printStackTrace();
-
         }
         return ResponseEntity.ok(r);
     }
@@ -157,8 +151,8 @@ public class UserController {
         return " hi you!";
     }
 
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
-    public Integer login(HttpServletResponse response) throws Exception{
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public Integer login(HttpServletResponse response) throws Exception {
         download(response);
         download1(response);
         return 0;
@@ -167,12 +161,11 @@ public class UserController {
     private void download(HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=utf-8");
         response.getOutputStream().write("hellWorld第一次".getBytes());
-
     }
+
     private void download1(HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=utf-8");
         response.getOutputStream().write("hellWorld第一次".getBytes());
-
     }
 
     @RequestMapping(value = "/test")
