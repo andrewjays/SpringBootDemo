@@ -9,13 +9,13 @@ spring:
 #  zipkin:
 #    base-url: http://localhost:9411
 
-fastdfs:
+fdfs:
   so-timeout: 1501
-  connect-timeout: 601
-  thumb-image: # 缩略图
-    width: 60
-    height: 60
-  tracker-list: # tracker地址
-    - 103.40.232.190:22122
-    - 103.40.232.189:22122
+  connect-timeout: 1601
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+     - 103.40.232.189:22122
+     - 103.40.232.190:22122
 
