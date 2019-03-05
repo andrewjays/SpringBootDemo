@@ -33,22 +33,18 @@ public class FastDFSDemo {
         int count = 1;
         int len = 0;
         StorePath path = null;
-        while ((len = IOUtils.read(inputStream, b)) != -1) {
+        while ((len = IOUtils.read(inputStream, b)) != -1&&len!=0) {
             log.info("第" + count + "次:" + len);
             if (count == 1) {
                 path = storageClient.uploadAppenderFile("group1", inputStream
                         , len, "docx");
 
-            } else if (len < filesize && len != 0) {
+            } else if (len < filesize ) {
                 FileOutputStream fos = new FileOutputStream("D:\\test\\temp");
                 IOUtils.write(b, fos);
                 file = new File("D:\\test\\temp");
                 FileInputStream fileInputStream = new FileInputStream(file);
                 storageClient.appendFile("group1", path.getPath(), fileInputStream, len);
-
-            } else if (len == 0) {
-                inputStream.close();
-                return path.getFullPath();
             }
             count++;
         }
