@@ -10,8 +10,8 @@ spring:
 #    base-url: http://localhost:9411
 
 fdfs:
-  so-timeout: 1501
-  connect-timeout: 1601
+  so-timeout: 90000
+  connect-timeout: 90000
   thumb-image:
     width: 150
     height: 150
