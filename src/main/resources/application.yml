@@ -6,16 +6,33 @@ spring:
   datasource:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
-#  zipkin:
-#    base-url: http://localhost:9411
+#eureka.instace.hostname=127.0.0.1
+##注册中心不需要注册自己
+#eureka
+#  client
+#   register-with-eureka:false
+#eureka.client.fetch-registry=false
+#eureka.client.serviceUrl.defaultZone=http://127.0.0.1:1111/eureka/
 
+zipkin:
+    base-url: http://localhost:9411
+#pool.max-total = 200
+#  fdfs.pool.max-wait-millis = 100
+#  fdfs.pool.jmx-name-base = 1
+#  fdfs.pool.jmx-name-prefix = 1
 fdfs:
   so-timeout: 90000
   connect-timeout: 90000
+
   thumb-image:
     width: 150
     height: 150
   tracker-list:
      - 103.40.232.189:22122
-     - 103.40.232.190:22122
+  pool:
+    max-wait-millis: 100
+    jmx-name-base: 1
+    jmx-name-prefix: 1
+    max-total: 1000
+    # - 103.40.232.190:22122
 
