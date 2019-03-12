@@ -25,7 +25,6 @@ fdfs:
     jmx-name-base: 1
     jmx-name-prefix: 1
     max-total: 1000
-
 #eureka.instace.hostname=127.0.0.1
 ##注册中心不需要注册自己
 #eureka

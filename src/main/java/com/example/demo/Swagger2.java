@@ -8,29 +8,29 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
- 
+
 /**
- *
+ * 监控接口连接规范
  */
 @Configuration
 public class Swagger2 {
- 
-	@Bean
-	public Docket createRestApi() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.apiInfo(apiInfo())
-				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
-				.paths(PathSelectors.any())
-				.build();
-	}
-	
-	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder()
-				.title("springboot利用swagger构建api文档")
-				.description("简单优雅的restfun风格")
-				.termsOfServiceUrl("")
-				.version("1.0")
-				.build();
-	}
+
+    @Bean
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("springboot利用swagger构建api文档")
+                .description("简单优雅的restfun风格")
+                .termsOfServiceUrl("")
+                .version("1.0")
+                .build();
+    }
 }
