@@ -1,11 +1,9 @@
 package com.example.demo.controller;
 
 
-
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.github.tobato.fastdfs.service.AppendFileStorageClient;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,27 +25,20 @@ public class FastDFSDemo {
 
     @PostMapping("/fileLoad")
     public String fileUpLoad(MultipartFile uploadFile) throws Exception {
-        int filesize = 1024 * 80;
-        File file = null;
+        int filesize = 1024 * 1024 * 50;
         InputStream inputStream = uploadFile.getInputStream();
-
-        byte[] b = new byte[filesize];
         int count = 1;
-        int len = 0;
         StorePath path = null;
-        while ((len = IOUtils.read(inputStream, b)) != -1&&len!=0) {
-            log.info("第" + count + "次:" + len);
+        while (inputStream.available() > 0) {
+            log.info("第" + count + "次:" + filesize + "流大小:" + inputStream.available());
+            int size = inputStream.available() > filesize ? filesize : inputStream.available();
             if (count == 1) {
                 path = storageClient.uploadAppenderFile("group1", inputStream
-                        , len, "docx");
-
-            } else if (len < filesize ) {
-                FileOutputStream fos = new FileOutputStream("D:\\test\\temp");
-                IOUtils.write(b, fos);
-                file = new File("D:\\test\\temp");
-                FileInputStream fileInputStream = new FileInputStream(file);
-                storageClient.appendFile("group1", path.getPath(), fileInputStream, len);
+                        , size, "zip");
+            } else {
+                storageClient.appendFile("group1", path.getPath(), inputStream, size);
             }
+            log.info("第" + count + "次上传成功:" + filesize);
             count++;
         }
         inputStream.close();

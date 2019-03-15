@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-import zipkin.server.EnableZipkinServer;
+
 
 //@EnableZipkinServer
 @EnableEurekaServer

@@ -1,8 +1,10 @@
 package com.example.demo;
 
+import com.example.demo.handler.StringHandler;
 import org.csource.common.MyException;
 import org.csource.fastdfs.*;
 
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -11,6 +13,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -19,6 +24,7 @@ import java.util.concurrent.Executors;
  * @Description:
  * @Date: Created in 2019/3/8 10:30
  */
+
 @RunWith(SpringRunner.class)
 @SpringBootTest()
 public class UploadTest {
@@ -52,7 +58,7 @@ public class UploadTest {
         System.out.println("线程池------------------文件地址" + path);
     }
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         // 多线程插入测试
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
 
@@ -68,5 +74,17 @@ public class UploadTest {
 
     }
 
+    @Test
+    public void testSplit() {
+        String reportContent = "93 02 00 09 93 03 00 09 93 05 00 09 93 06 00 09 C0 73 88 08 90 02 00 08";
+        List<String> strList1 = StringHandler.splitString(reportContent, 12);
+        Map<String, String> faultCodeMap = new HashMap<>();
+        for (String str : strList1) {
+            List<String> strList2 = StringHandler.splitString(str, 9);
+            List<String> strList3 = StringHandler.splitString(strList2.get(0), 6);
+            faultCodeMap.put(strList3.get(0).replaceAll(" ", ""), strList2.get(1));
+        }
 
+        System.out.println(faultCodeMap.toString());
+    }
 }

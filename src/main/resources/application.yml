@@ -13,13 +13,9 @@ spring:
 fdfs:
   so-timeout: 90000
   connect-timeout: 90000
-
-  thumb-image:
-    width: 150
-    height: 150
   tracker-list:
      - 103.40.232.189:22122
-      # - 103.40.232.190:22122
+     - 103.40.232.190:22122
   pool:
     max-wait-millis: 100
     jmx-name-base: 1
