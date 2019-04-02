@@ -60,7 +60,7 @@ public class UploadTest {
 
     public static void main(String[] args) {
         // 多线程插入测试
-        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(10);
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(100);
 
         for (int i = 1; i < 2000; i++) {
             fixedThreadPool.execute(() -> {

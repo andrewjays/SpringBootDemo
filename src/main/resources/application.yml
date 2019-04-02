@@ -17,7 +17,7 @@ fdfs:
      - 103.40.232.189:22122
      - 103.40.232.190:22122
   pool:
-    max-wait-millis: 100
+    max-wait-millis: -1
     jmx-name-base: 1
     jmx-name-prefix: 1
     max-total: 1000

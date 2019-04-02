@@ -40,7 +40,7 @@ public class FileUploadTest {
 
         CountDownLatch cdl = new CountDownLatch(2);
         File file1 = new File("D:\\test\\download.txt");
-        ExecutorService cachedThreadPool = Executors.newFixedThreadPool(10);
+        ExecutorService cachedThreadPool = Executors.newFixedThreadPool(100);
         File file = new File("D:\\test\\uploadTest.zip");
 
         //          ThreadPoolTest.threadPool(cdl,storageClient);

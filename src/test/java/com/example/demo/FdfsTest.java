@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.github.tobato.fastdfs.domain.fdfs.ThumbImageConfig;
+import com.github.tobato.fastdfs.domain.proto.storage.DownloadFileWriter;
 import com.github.tobato.fastdfs.service.AppendFileStorageClient;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import org.csource.fastdfs.StorageClient;
@@ -14,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.net.URL;
 
 
 @RunWith(SpringRunner.class)
@@ -30,15 +32,25 @@ public class FdfsTest {
 
     @Test
     public void testUpload() throws FileNotFoundException {
-        File file = new File("D:\\test\\uploadTest.zip");
+        //        File file = new File("D:\\test\\1.zip");
+        //
+        //        StorePath storePath = this.storageClient.uploadFile("group1",
+        //                new FileInputStream(file), file.length(), "zip");
+        //        // 带分组的路径
+        //        System.out.println(storePath.getFullPath());
+        //        // 不带分组的路径
+        //        System.out.println(storePath.getPath());
 
-        StorePath storePath = this.storageClient.uploadFile("group1",
-                new FileInputStream(file), file.length(), "zip");
-        // 带分组的路径
-        System.out.println(storePath.getFullPath());
-        // 不带分组的路径
-        System.out.println(storePath.getPath());
+        Class<? extends FdfsTest> aClass = this.getClass();
+        URL resource = aClass.getResource("/");
+        String path = resource.getPath();
 
+        //        File file = new File("D:\\test\\2.zip");
+        //
+        //        DownloadFileWriter downloadFileWriter = new DownloadFileWriter(file.getName());
+        //        storageClient.downloadFile("group1","group1/M00/02/B7/Zyjou1ydyTyATVLZAAAAghBcXiA790.zip",downloadFileWriter);
+
+        int a = 1;
     }
 
     //    @Test

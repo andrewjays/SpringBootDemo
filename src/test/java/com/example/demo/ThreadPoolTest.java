@@ -25,7 +25,7 @@ public class ThreadPoolTest {
 
     public static void threadPool(CountDownLatch cdl,FastFileStorageClient storageClient) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-
+        Executors.newFixedThreadPool(1);
         cachedThreadPool.execute(() -> {
             try {
                 checkDownload(cdl,storageClient);
