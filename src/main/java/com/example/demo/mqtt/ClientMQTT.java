@@ -17,9 +17,7 @@ public class ClientMQTT {
     private MqttConnectOptions options;
     private String userName = "iotsuperuser_shadow";
     private String passWord = "1";
-
     private ScheduledExecutorService scheduler;
-
     private void start() {
         try {
             // host为主机名，clientid即连接MQTT的客户端ID，一般以唯一标识符表示，MemoryPersistence设置clientid的保存形式，默认为以内存保存
@@ -39,15 +37,13 @@ public class ClientMQTT {
             // 设置回调
             client.setCallback(new PushCallback());
             MqttTopic topic = client.getTopic(TOPIC);
-            //setWill方法，如果项目中需要知道客户端是否掉线可以调用该方法。设置最终端口的通知消息
+            // setWill方法，如果项目中需要知道客户端是否掉线可以调用该方法。设置最终端口的通知消息
             options.setWill(topic, "close".getBytes(), 2, true);
-
             client.connect(options);
             //订阅消息
-            int[] Qos  = {1};
+            int[] Qos = {1};
             String[] topic1 = {TOPIC};
             client.subscribe(topic1, Qos);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

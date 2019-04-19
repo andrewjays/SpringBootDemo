@@ -37,7 +37,6 @@ public class Demo {
         logger.info("类型转换:" + a);
         BigDecimal b = new BigDecimal(1L);
         Double a1 = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-
         logger.info("类型转换:" + a1 + "数值类型" + a1.getClass().getName());
         Double c =1.00D;
         Double aDouble = Double.valueOf(c);
@@ -47,7 +46,6 @@ public class Demo {
 
     @RequestMapping("/text")
     public void exportVehicleList(String vehicleReq, HttpServletResponse response) {
-
         //List<VehicleModelListVo> list = vehicleMapper.queryVehicleList(vehicleReq);
         //vehicleReq.setIsLimit(false);
         String fileName = null;
@@ -62,7 +60,6 @@ public class Demo {
             // get方法
             keys = new String[]{"Vin", "BrandName", "ModelName", "Style", "Power", "EngineStyle", "Config",
                     "ProductTime", "IsActive", "Source", "CreateTime"};
-
         } else if (2 == 2) {
             fileName = "测试车辆列表";
             // 表头
@@ -71,9 +68,7 @@ public class Demo {
             // get方法
             keys = new String[]{"Vin", "BrandName", "ModelName", "Style", "Power", "EngineStyle", "Config",
                     "ProductTime", "IsActive", "Status", "CreateTime"};
-
         }
-
         List<Object> data = new ArrayList<>();
         data.addAll(data);
         // 写数据
@@ -81,10 +76,6 @@ public class Demo {
             ExcelExportUtil.download(fileName, sheetName, headers, keys, data, response);
         } catch (Exception e) {
             e.printStackTrace();
-
         }
-
-
     }
-
 }

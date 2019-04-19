@@ -37,15 +37,14 @@ public class ServerMQTT {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
         options.setUserName(userName);
-        //        options.setPassword(passWord.toCharArray());
-        //        // 设置超时时间
-        //        options.setConnectionTimeout(10);
-        //        // 设置会话心跳时间
-        //        options.setKeepAliveInterval(100);
+        options.setPassword(passWord.toCharArray());
+        // 设置超时时间
+        options.setConnectionTimeout(10);
+        // 设置会话心跳时间
+        options.setKeepAliveInterval(100);
         try {
             client.setCallback(new PushCallback());
             client.connect(options);
-
             topic11 = client.getTopic(TOPIC);
         } catch (Exception e) {
             e.printStackTrace();
