@@ -2,20 +2,24 @@ package com.example.demo.mqtt;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+import rx.internal.operators.OnSubscribeDelaySubscriptionOther;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ServerMQTT {
 
     //tcp://MQTT安装的服务器地址:MQTT定义的端口号
     public static final String HOST = "tcp://212.64.98.231:1884";
     //定义一个主题
-    public static final String TOPIC = "topic11";
+    public static final String TOPIC = "35635931ed14387eac12fe7be0c4b06a";
     //定义MQTT的ID，可以在MQTT服务配置中指定
-    private static final String clientid = "1111111111";
+    private static final String clientid = "service";
 
     private MqttClient client;
     private MqttTopic topic11;
-    private String userName = "iotsuperuser_shadow";
-    private String passWord = "";
+    private String userName = "89decbb84e685fe52a205f6a4ddeb3ed";
+    private String passWord = "b5cd0906e624629f39735206e9fc07ca";
 
     private MqttMessage message;
 
@@ -39,13 +43,14 @@ public class ServerMQTT {
         options.setUserName(userName);
         options.setPassword(passWord.toCharArray());
         // 设置超时时间
-        options.setConnectionTimeout(10);
+        options.setConnectionTimeout(1000000);
         // 设置会话心跳时间
         options.setKeepAliveInterval(100);
         try {
             client.setCallback(new PushCallback());
             client.connect(options);
             topic11 = client.getTopic(TOPIC);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -72,12 +77,27 @@ public class ServerMQTT {
      * @throws MqttException
      */
     public static void main(String[] args) throws MqttException {
-        ServerMQTT server = new ServerMQTT();
-        server.message = new MqttMessage();
-        server.message.setQos(1);
-        server.message.setRetained(true);
-        server.message.setPayload("hello,topic11".getBytes());
-        server.publish(server.topic11, server.message);
-        System.out.println(server.message.isRetained() + "------ratained状态");
+
+//        String res;
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss,SS");
+//        long lt = new Long(1483426181100L);
+//        Date date = new Date(lt);
+//        res = simpleDateFormat.format(date);
+//
+//        System.out.println(res);
+//
+
+        while (true){
+
+        }
+        //        ServerMQTT server = new ServerMQTT();
+        //        server.message = new MqttMessage();
+        //        server.message.setQos(1);
+        //        server.message.setRetained(true);
+        //        server.message.setPayload("hello,topic11".getBytes());
+        //
+        //        server.publish(server.topic11, server.message);
+        //
+        //        System.out.println(server.message.isRetained() + "------ratained状态");
     }
 }
