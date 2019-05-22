@@ -1,9 +1,12 @@
 package com.example.demo;
 
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 /**
  * @author Jay
@@ -50,10 +53,10 @@ public class MqttTest {
             message.setQos(qos);
             // 发布消息
             sampleClient.publish(topic, message);
-//            // 断开连接
-//            sampleClient.disconnect();
-//            // 关闭客户端
-//            sampleClient.close();
+            //            // 断开连接
+            //            sampleClient.disconnect();
+            //            // 关闭客户端
+            //            sampleClient.close();
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
             System.out.println("msg " + me.getMessage());
@@ -115,6 +118,18 @@ public class MqttTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+  public   void test() {
+        HashMap<String, String> objectObjectHashMap = new HashMap<>();
+        objectObjectHashMap.put("1","11");
+        objectObjectHashMap.put("2","22");
+        objectObjectHashMap.put("3","33");
+        objectObjectHashMap.put("4","44");
+        objectObjectHashMap.put("5","55");
+        String s = JSON.toJSONString(objectObjectHashMap);
+        System.out.println(s);
     }
 
 }

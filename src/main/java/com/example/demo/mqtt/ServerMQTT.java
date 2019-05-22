@@ -2,10 +2,6 @@ package com.example.demo.mqtt;
 
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-import rx.internal.operators.OnSubscribeDelaySubscriptionOther;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class ServerMQTT {
 
@@ -78,18 +74,17 @@ public class ServerMQTT {
      */
     public static void main(String[] args) throws MqttException {
 
-//        String res;
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss,SS");
-//        long lt = new Long(1483426181100L);
-//        Date date = new Date(lt);
-//        res = simpleDateFormat.format(date);
-//
-//        System.out.println(res);
-//
+        //        String res;
+        //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss,SS");
+        //        long lt = new Long(1483426181100L);
+        //        Date date = new Date(lt);
+        //        res = simpleDateFormat.format(date);
+        //
+        //        System.out.println(res);
+        //
 
-        while (true){
-
-        }
+        //        boolean b = "timeout".equalsIgnoreCase("TImeOut");
+        //        System.out.println(b);
         //        ServerMQTT server = new ServerMQTT();
         //        server.message = new MqttMessage();
         //        server.message.setQos(1);
@@ -99,5 +94,17 @@ public class ServerMQTT {
         //        server.publish(server.topic11, server.message);
         //
         //        System.out.println(server.message.isRetained() + "------ratained状态");
+        try {
+            test();
+        } catch (Exception e) {
+            System.out.println("已被处理");
+        }
+        System.out.println("--------------------");
+    }
+
+    static void test() {
+        int i = 1;
+        int b = i / 0;
+
     }
 }
