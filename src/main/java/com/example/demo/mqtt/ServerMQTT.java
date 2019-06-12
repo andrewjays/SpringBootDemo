@@ -104,7 +104,7 @@ public class ServerMQTT {
 
     static void test() {
         int i = 1;
-        int b = i / 0;
-
+        int b = 3%6;
+        System.out.println(b);
     }
 }
