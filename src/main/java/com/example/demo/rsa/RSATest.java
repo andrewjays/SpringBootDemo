@@ -2,6 +2,7 @@ package com.example.demo.rsa;
 
 import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import sun.misc.BASE64Decoder;
 
 import javax.crypto.Cipher;
 import java.io.*;
@@ -165,9 +166,13 @@ public class RSATest {
                 "illcVIjtQQlslAPBwGTKf4VObYEf61kZl1B9WeUDz04mvSmg6lKD540CQApjzlJH\n" +
                 "0oBJpOIMGg+knw3zTlcSF3Qqr6CHNJOHEvd9W0pRAuIKHth3ygx38blLfFYkdRdK\n" +
                 "KgBNPy49EfZs5v8=";
-        String str="";
+        String str="n64+M5JF92Hk+MeEOZlkKpH3xaW6A1khqT1S2S8Gx3FI9cqh9jIrTSoVoKdlACjAceAsz6bXxkhtWm96pviyQDzswd2gFiaxsqpCABL0v+pXlOzLEhV427yTf9ZdaiqYaOd8cKocTBMxhWOpVloF0BH1uqTPyhaX4XE775XjfsM=";
         String decrypt = decrypt(str,privateKey);
         System.out.println(decrypt);
+
+        byte[] bytes = new BASE64Decoder().decodeBuffer(decrypt);
+        String s = new String(bytes);
+        System.out.println(s);
     }
 
 }
