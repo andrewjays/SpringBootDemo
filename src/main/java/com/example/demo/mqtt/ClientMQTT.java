@@ -5,12 +5,13 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.concurrent.ScheduledExecutorService;
 
 public class ClientMQTT {
 
-    public static final String HOST = "tcp://212.64.98.231:1884";
+    public static final String HOST = "tcp://180.97.81.75:7088";
     //public static final String HOST = "tcp://172.17.16.7:1884";
     public static final String TOPIC = "35635931ed14387eac12fe7be0c4b06a";
     private static final String clientid = "35635931ed14387eac12fe7be0c4b06a";
@@ -45,10 +46,9 @@ public class ClientMQTT {
             //订阅消息
             int[] Qos = {1};
             String[] topic1 = {TOPIC};
-           for(int i=0;i<10;i++){
 
                 client.subscribe(topic1, Qos);
-            }
+
 
 
 
@@ -60,7 +60,14 @@ public class ClientMQTT {
     }
 
     public static void main(String[] args) throws MqttException {
-        ClientMQTT client = new ClientMQTT();
-        client.start();
+//        ClientMQTT client = new ClientMQTT();
+//        client.start();
+
+        BCryptPasswordEncoder pwCoder = new BCryptPasswordEncoder(12);
+        String encode = pwCoder.encode("123");
+
+        boolean matches = pwCoder.matches("a12345", "$2a$12$Le6RzFzrorXPnXsMWqHjHO.CjPTmqumJqwDSAOmO1UNCDXt1zK4i6");
+        System.out.println(matches);
+
     }
 }

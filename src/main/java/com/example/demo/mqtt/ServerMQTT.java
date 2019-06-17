@@ -6,7 +6,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class ServerMQTT {
 
     //tcp://MQTT安装的服务器地址:MQTT定义的端口号
-    public static final String HOST = "tcp://212.64.98.231:1884";
+    public static final String HOST = "tcp://180.97.81.75:7088";
     //定义一个主题
     public static final String TOPIC = "35635931ed14387eac12fe7be0c4b06a";
     //定义MQTT的ID，可以在MQTT服务配置中指定
@@ -85,21 +85,21 @@ public class ServerMQTT {
 
         //        boolean b = "timeout".equalsIgnoreCase("TImeOut");
         //        System.out.println(b);
-        //        ServerMQTT server = new ServerMQTT();
-        //        server.message = new MqttMessage();
-        //        server.message.setQos(1);
-        //        server.message.setRetained(true);
-        //        server.message.setPayload("hello,topic11".getBytes());
-        //
-        //        server.publish(server.topic11, server.message);
-        //
-        //        System.out.println(server.message.isRetained() + "------ratained状态");
-        try {
-            test();
-        } catch (Exception e) {
-            System.out.println("已被处理");
-        }
-        System.out.println("--------------------");
+                ServerMQTT server = new ServerMQTT();
+                server.message = new MqttMessage();
+                server.message.setQos(1);
+                server.message.setRetained(true);
+                server.message.setPayload("hello,topic11".getBytes());
+
+                server.publish(server.topic11, server.message);
+
+                System.out.println(server.message.isRetained() + "------ratained状态");
+//        try {
+//            test();
+//        } catch (Exception e) {
+//            System.out.println("已被处理");
+//        }
+//        System.out.println("--------------------");
     }
 
     static void test() {
