@@ -42,16 +42,14 @@ public class ClientMQTT {
             MqttTopic topic = client.getTopic(TOPIC);
             // setWill方法，如果项目中需要知道客户端是否掉线可以调用该方法。设置最终端口的通知消息 遗愿消息
             options.setWill(topic, "close".getBytes(), 2, true);
+
+
             client.connect(options);
             //订阅消息
             int[] Qos = {1};
             String[] topic1 = {TOPIC};
 
-                client.subscribe(topic1, Qos);
-
-
-
-
+            client.subscribe(topic1, Qos);
 
 
         } catch (Exception e) {
@@ -60,8 +58,8 @@ public class ClientMQTT {
     }
 
     public static void main(String[] args) throws MqttException {
-//        ClientMQTT client = new ClientMQTT();
-//        client.start();
+        //        ClientMQTT client = new ClientMQTT();
+        //        client.start();
 
         BCryptPasswordEncoder pwCoder = new BCryptPasswordEncoder(12);
         String encode = pwCoder.encode("123");
