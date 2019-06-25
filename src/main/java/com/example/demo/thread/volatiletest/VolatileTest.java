@@ -7,27 +7,33 @@ package com.example.demo.thread.volatiletest;
  */
 public class VolatileTest {
 
-    public static volatile int finished=0;
+    public static int finished = 0;
 
-    private  static  void  checkFinished(){
+    private static void checkFinished() {
 
-        while (finished==0){
+        while (finished == 0) {
             System.out.println("no finish");
         }
 
         System.out.println("finished");
     }
 
-    private static  void  finish(){
-        finished=1;
+    private static void finish() {
+        finished = 1;
     }
 
-    public static void main(String[] args) throws Exception{
-        new Thread(()->checkFinished()).start();
+    public static void main(String[] args) throws Exception {
+
+        Thread t = new Thread(() -> checkFinished());
+        t.start();
+
         Thread.sleep(100);
         // 主线程将标志位置为1
         finish();
+
         System.out.println("main finished");
+        Thread.sleep(100);
+
 
     }
 }
