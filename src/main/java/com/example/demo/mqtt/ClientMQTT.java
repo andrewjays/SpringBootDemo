@@ -11,7 +11,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class ClientMQTT {
 
-    public static final String HOST = "tcp://180.97.81.75:7088";
+    public static final String HOST = "tcp://172.26.224.109:1883";
     //public static final String HOST = "tcp://172.17.16.7:1884";
     public static final String TOPIC = "35635931ed14387eac12fe7be0c4b06a";
     private static final String clientid = "35635931ed14387eac12fe7be0c4b06a";
@@ -58,14 +58,14 @@ public class ClientMQTT {
     }
 
     public static void main(String[] args) throws MqttException {
-        //        ClientMQTT client = new ClientMQTT();
-        //        client.start();
+                ClientMQTT client = new ClientMQTT();
+                client.start();
 
-        BCryptPasswordEncoder pwCoder = new BCryptPasswordEncoder(12);
-        String encode = pwCoder.encode("123");
-
-        boolean matches = pwCoder.matches("a12345", "$2a$12$Le6RzFzrorXPnXsMWqHjHO.CjPTmqumJqwDSAOmO1UNCDXt1zK4i6");
-        System.out.println(matches);
+//        BCryptPasswordEncoder pwCoder = new BCryptPasswordEncoder(12);
+//        String encode = pwCoder.encode("123");
+//
+//        boolean matches = pwCoder.matches("a12345", "$2a$12$Le6RzFzrorXPnXsMWqHjHO.CjPTmqumJqwDSAOmO1UNCDXt1zK4i6");
+//        System.out.println(matches);
 
     }
 }
