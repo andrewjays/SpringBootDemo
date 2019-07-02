@@ -14,7 +14,7 @@ import java.net.URI;
  */
 @Slf4j
 public class MyWebSocketClient extends WebSocketClient {
-     MyWebSocketClient(URI serverUri) {
+    MyWebSocketClient(URI serverUri) {
         super(serverUri);
     }
 
@@ -25,7 +25,7 @@ public class MyWebSocketClient extends WebSocketClient {
 
     @Override
     public void onMessage(String s) {
-        log.info("收到消息:"+s);
+        log.info("收到的消息:" + s);
     }
 
     @Override

@@ -2,9 +2,11 @@ package com.example.demo.jdk8;
 
 import org.junit.Test;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 /**
@@ -43,6 +45,41 @@ public class StreamTest {
 
         // 4.创建无限流
         // 迭代
-        
+        Stream.iterate(0, x -> x + 2).limit(10).forEach(System.out::println);
+        // 创建
+        Stream<Double> generate = Stream.generate(() -> Math.random());
+        generate.limit(5).forEach(System.out::println);
     }
+
+    List<Employee> list = Arrays.asList(
+            new Employee("张三", "上海", 5000, 22),
+            new Employee("李四", "北京", 4000, 23),
+            new Employee("c五", "日本", 6000, 50),
+            new Employee("b七", "香港", 7000, 50),
+            new Employee("赵六", "纽约", 1000, 8)
+    );
+
+    /**
+     * 多个中间操作可以连接起来形成一个流水线，除非流水想上出发终止操作。
+     * 否则中间操作不会执行任何的处理，而在终止操作时一次性全部处理，成为“惰性求值”。
+     * <p>
+     * 筛选和切片
+     * filter -- 接受Lambda，从流中排除某些元素
+     * limit -- 截断流，使其元素不超过某个给定数量
+     * skip -- 跳过元素，返回一个扔掉了前n个元素的流，若流中元素不足n个，则返回一个空流，与limit互补。
+     * distinct -- 去重，通过hashcode和equals去重。
+     */
+    @Test
+    public void test2() {
+        // 创建流
+        Stream<Employee> stream = list.stream();
+
+        stream
+                // 过滤符合条件的流元素
+                .filter(x->x.getAge()>25)
+                //
+
+    }
+
+
 }
