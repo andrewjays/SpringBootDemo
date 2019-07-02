@@ -67,6 +67,10 @@ public class WebSocketServer {
                 webSocketSet) {
             item.sendAllMessage(message);
         }
+
+        System.out.println("客户端信息:"+message);
+        mysession.getBasicRemote().sendText("这里是服务端!");
+
     }
 
     private void sendAllMessage(String message) throws IOException {

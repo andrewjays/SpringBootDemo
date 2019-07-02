@@ -179,18 +179,18 @@
             <version>0.9</version>
         </dependency>
 
-        <!--websocket-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
+        <!--websocket服务端-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <!--websocket客户端-->
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+          <artifactId>Java-WebSocket</artifactId>
+            <version>1.3.8</version>
         </dependency>
 
         <dependency>

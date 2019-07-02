@@ -10,11 +10,11 @@ import org.springframework.kafka.annotation.KafkaListener;
  */
 public class Consumer {
 
-    @KafkaListener(topics = {"topic"})
-    public void listenUpdateProcessLog(ConsumerRecord<String, String> record) {
-        // 发送过来的data
-        String value = record.value();
-
-
-    }
+//    @KafkaListener(topics = {"topic"})
+//    public void listenUpdateProcessLog(ConsumerRecord<String, String> record) {
+//        // 发送过来的data
+//        String value = record.value();
+//
+//
+//    }
 }
