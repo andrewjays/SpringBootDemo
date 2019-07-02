@@ -4,7 +4,7 @@ package com.example.demo.websocket;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.URI;
-import java.net.URISyntaxException;
+
 
 /**
  * @author Jay

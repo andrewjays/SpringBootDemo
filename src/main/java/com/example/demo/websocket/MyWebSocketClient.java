@@ -14,7 +14,7 @@ import java.net.URI;
  */
 @Slf4j
 public class MyWebSocketClient extends WebSocketClient {
-    public MyWebSocketClient(URI serverUri) {
+     MyWebSocketClient(URI serverUri) {
         super(serverUri);
     }
 
