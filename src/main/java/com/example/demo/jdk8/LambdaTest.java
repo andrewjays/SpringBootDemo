@@ -108,10 +108,11 @@ public class LambdaTest {
     @Test
     public void test1() {
         Collections.sort(list, (x, y) -> {
-            if (x.getAge() != y.getAge())
+            if (x.getAge() != y.getAge()) {
                 return Integer.compare(x.getAge(), y.getAge());
-            else
+            } else {
                 return x.getName().compareTo(y.getName());
+            }
         });
         for (Employee employee : list) {
             System.out.println(employee);
@@ -155,10 +156,10 @@ public class LambdaTest {
      */
     @Test
     public void test3() {
-        Long r = getR(25l, 30l, (t1, t2) -> t1 * t2);
+        Long r = getR(25L, 30L, (t1, t2) -> t1 * t2);
         System.out.println(r);
 
-        Long r1 = getR(25l, 23l, (t1, t2) -> t1 + t2);
+        Long r1 = getR(25L, 23L, (t1, t2) -> t1 + t2);
         System.out.println(r1);
 
     }

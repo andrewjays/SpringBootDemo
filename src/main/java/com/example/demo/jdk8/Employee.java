@@ -8,17 +8,26 @@ import lombok.Data;
  * @date Created in 2019/7/2 17:40
  */
 @Data
-public class Employee {
+public class Employee implements Comparable<Employee> {
     private String name;
     private String address;
-    private int money;
+    private int salary;
     private int age;
 
-    public Employee(String name, String address, int money, int age) {
+    public Employee(String name, String address, int salary, int age) {
         this.name = name;
         this.address = address;
-        this.money = money;
+        this.salary = salary;
         this.age = age;
     }
 
+    @Override
+    public int compareTo(Employee o) {
+        if (age < o.getAge()) {
+            return -1;
+        } else {
+            return 1;
+        }
+
+    }
 }
