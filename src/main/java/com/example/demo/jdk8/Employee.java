@@ -13,7 +13,9 @@ public class Employee implements Comparable<Employee> {
     private String address;
     private int salary;
     private int age;
+    public Employee() {
 
+    }
     public Employee(String name, String address, int salary, int age) {
         this.name = name;
         this.address = address;
