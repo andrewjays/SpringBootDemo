@@ -1,8 +1,8 @@
 package com.example.demo;
 
 
-import com.example.demo.springcontext.RContextTest;
-import com.example.demo.springcontext.ContextTest1;
+import com.example.demo.spring.springcontext.RContextTest;
+import com.example.demo.spring.springcontext.ContextTest1;
 import org.springframework.boot.SpringApplication;
 
 

@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.handler.StringHandler;
+import com.example.demo.spring.handler.StringHandler;
 import org.csource.common.MyException;
 import org.csource.fastdfs.*;
 
