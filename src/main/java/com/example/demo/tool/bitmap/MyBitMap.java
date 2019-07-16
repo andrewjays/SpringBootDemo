@@ -8,6 +8,7 @@ public class MyBitMap {
     public MyBitMap(int size) {
         if (size <= 0) {
             return;
+            
         }
         initSize = size / (8) + 1;
         bytes = new byte[initSize];
