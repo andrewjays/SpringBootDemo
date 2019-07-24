@@ -1,8 +1,10 @@
 package com.example.demo.tool.kafka.producer;
 
 
-
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 
@@ -15,11 +17,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaProducerUntilImpl implements KafkaProducerUntil {
 
-    //    @Autowired
-    //    private KafkaTemplate kafkaTemplate;
+   // @Autowired
+    private KafkaTemplate kafkaTemplate;
 
     @Override
     public void dataSyn(String kafkaTopic, Object data) {
-        //        kafkaTemplate.send(kafkaTopic, JSON.toJSONString(data));
+
+        kafkaTemplate.send(kafkaTopic, JSON.toJSONString(data));
+
+
     }
 }
