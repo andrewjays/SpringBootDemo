@@ -7,18 +7,18 @@ spring:
      name: druidDataSource
      type: com.alibaba.druid.pool.DruidDataSource
    kafka:
-    bootstrap-servers: 127.0.0.1:9092
-    consumer:
-      auto-offset-reset: latest
-      group-id: rds-test-log
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      enable-auto-commit: true
-      max-poll-records: 1000
-      auto-commit-interval: 20
-      fetch-max-wait: 500
-      fetch-min-size: 5
-      heartbeat-interval: 2000
+      bootstrap-servers: 127.0.0.1:9092
+      consumer:
+        auto-offset-reset: latest
+        group-id: rds-test-log
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        enable-auto-commit: true
+        max-poll-records: 1000
+        auto-commit-interval: 20
+        fetch-max-wait: 500
+        fetch-min-size: 5
+        heartbeat-interval: 2000
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer

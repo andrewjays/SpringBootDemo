@@ -19,4 +19,5 @@ public class Consumer {
         System.out.println(value);
 
     }
+
 }
