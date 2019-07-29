@@ -54,6 +54,7 @@ public class KafkaProducerTest {
                 if (messageNo % 100 == 0) {
                     System.out.println("成功发送了" + messageNo + "条");
                     break;
+                    
                 }
                 messageNo++;
                 //Utils.sleep(1);
