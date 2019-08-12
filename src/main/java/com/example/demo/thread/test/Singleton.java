@@ -10,7 +10,7 @@ public class Singleton {
     static Singleton instance;
 
     static Singleton getInstance() {
-        
+
         if (instance == null) {
             synchronized (Singleton.class) {
                 if (instance == null) {
@@ -48,6 +48,4 @@ public class Singleton {
         // 此例中，var==66
         System.out.println(b.get());
     }
-
-
 }
