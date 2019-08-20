@@ -5,12 +5,11 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttTopic;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-
 import java.util.concurrent.ScheduledExecutorService;
 
 public class ClientMQTT {
 
-    public static final String HOST = "tcp://180.97.81.75:7088";
+    public static final String HOST = "tcp://39.100.143.29:1883";
     //public static final String HOST = "tcp://172.17.16.7:1884";
     public static final String TOPIC = "test";
     private static final String clientid = "35635931ed14387eac12fe7be0c4b06a";

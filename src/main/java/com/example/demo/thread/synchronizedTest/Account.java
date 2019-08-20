@@ -1,4 +1,4 @@
-package com.example.demo.thread.test;
+package com.example.demo.thread.synchronizedTest;
 
 class Account {
     /**

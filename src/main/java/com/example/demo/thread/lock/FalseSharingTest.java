@@ -1,6 +1,5 @@
-package com.example.demo.thread;
+package com.example.demo.thread.lock;
 
-import io.swagger.models.properties.StringProperty;
 import sun.misc.Contended;
 
 /**
