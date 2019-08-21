@@ -32,6 +32,7 @@ public class CachedData {
             try {
                 // 再次检查状态
                 if (!cacheValid) {
+                    
                     // data = ...
                     cacheValid = true;
                 }
