@@ -41,7 +41,6 @@ public class ClientMQTT {
             // setWill方法，如果项目中需要知道客户端是否掉线可以调用该方法。设置最终端口的通知消息 遗愿消息
             options.setWill(topic, "close".getBytes(), 2, true);
 
-
             client.connect(options);
             //订阅消息
             int[] Qos = {1};
