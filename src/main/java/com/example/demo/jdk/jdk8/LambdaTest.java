@@ -19,6 +19,7 @@ import java.util.List;
  * @date Created in 2019/7/2 17:22
  */
 public class LambdaTest {
+
     /**
      * 基本lambda表达式
      * 左右遇一括号省，左侧推断类型省,能省则省。

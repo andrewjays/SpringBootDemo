@@ -110,7 +110,7 @@ public class StreamTest {
      */
     @Test
     public void test4() {
-
+        int a = 1;
         List<String> list = Arrays.asList("aaa", "bbb", "ccc", "ddd");
         Stream<Stream<Character>> streamStream = list
                 .stream()
@@ -120,7 +120,6 @@ public class StreamTest {
                 .forEach(sm -> sm
                         .forEach(System.out::println));
         System.out.println("-------------------------------------");
-
         list.stream()
                 // 大流中直接包含的是流元素，相当于add和addAll的区别。
                 .flatMap(StreamTest::getCharacter)
