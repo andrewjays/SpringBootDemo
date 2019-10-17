@@ -1,5 +1,8 @@
 package com.example.demo.thread.test;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 class VolatileExample {
     int x = 0;
     volatile boolean v = false;
@@ -17,6 +20,11 @@ class VolatileExample {
             // 如果在 1.5 以上的版本上运行，x 就是等于 42。
             System.out.println(x);
         }
+    }
+
+    public static void main(String[] args) {
+        Matcher matcher = Pattern.compile("").matcher("");
+        matcher.find();
     }
 }
 
