@@ -18,7 +18,7 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest()
 public class FdfsTest {
     //    @Autowired

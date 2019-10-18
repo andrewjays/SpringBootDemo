@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
  * @Date: Created in 2019/3/8 10:30
  */
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest()
 public class UploadTest {
 

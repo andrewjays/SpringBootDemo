@@ -27,7 +27,7 @@ import java.util.concurrent.Executors;
  * @Date: Created in 2019/3/6 10:57
  */
 @Slf4j
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 public class FileUploadTest {
 
