@@ -1,5 +1,8 @@
 package com.example.demo.thread.executor;
 
+
+import java.util.concurrent.ThreadPoolExecutor;
+
 /**
  * @author Jay
  * @description 线程池:一般池化资源的设计方法
@@ -28,5 +31,11 @@ class ThreadPool {
     //T1.execute(()->
 
     { // 具体业务逻辑
+    }
+
+    public static void main(String[] args) {
+        ThreadPoolExecutor test;
+;
+
     }
 }

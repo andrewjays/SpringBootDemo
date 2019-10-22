@@ -6,16 +6,16 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class ServerMQTT {
 
     //tcp://MQTT安装的服务器地址:MQTT定义的端口号
-    public static final String HOST = "tcp://39.100.143.29:1883";
+    public static final String HOST = "tcp://212.64.98.231:1884";
     //定义一个主题
     public static final String TOPIC = "test";
     //定义MQTT的ID，可以在MQTT服务配置中指定
-    private static final String clientid = "test";
+    private static final String clientid = "test111";
 
     private MqttClient client;
     private MqttTopic topic11;
-    private String userName = "89decbb84e685fe52a205f6a4ddeb3ed";
-    private String passWord = "b5cd0906e624629f39735206e9fc07ca";
+    private String userName = "test-superadmin";
+    private String passWord = "admin";
 
     private MqttMessage message;
 

@@ -9,10 +9,10 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class ClientMQTT {
 
-    public static final String HOST = "tcp://39.100.143.29:1883";
+    public static final String HOST = "tcp://212.64.98.231:1884";
     //public static final String HOST = "tcp://172.17.16.7:1884";
     public static final String TOPIC = "test";
-    private static final String clientid = "35635931ed14387eac12fe7be0c4b06a";
+    private static final String clientid = "35635931ed14387eac12fe7be0c4b06a1111";
     private MqttClient client;
     private MqttConnectOptions options;
     private String userName = "superadmin";
