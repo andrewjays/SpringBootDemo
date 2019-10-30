@@ -49,7 +49,6 @@ public class FdfsTest {
         //
         //        DownloadFileWriter downloadFileWriter = new DownloadFileWriter(file.getName());
         //        storageClient.downloadFile("group1","group1/M00/02/B7/Zyjou1ydyTyATVLZAAAAghBcXiA790.zip",downloadFileWriter);
-
         int a = 1;
     }
 
