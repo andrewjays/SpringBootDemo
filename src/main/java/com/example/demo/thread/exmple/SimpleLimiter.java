@@ -11,6 +11,8 @@ class SimpleLimiter {
     long next = System.nanoTime();
     /**
      * 发放令牌间隔：纳秒
+     * <p>
+     * '_'符号位数字书写方式,便于统计
      */
     long interval = 1000_000_000;
 
