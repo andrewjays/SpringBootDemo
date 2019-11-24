@@ -12,4 +12,10 @@ public class LongEvent {
     public void set(long value) {
         this.value = value;
     }
+
+    public static void main(String[] args) {
+        Float a =  +0.0f/+0.0f;
+        System.out.println(Float.intBitsToFloat(0x7F800002) );
+        System.out.println(a);
+    }
 }

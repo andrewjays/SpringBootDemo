@@ -24,6 +24,7 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(DemoApplication.class, args);
+
         // 默认注入名称为类名小写
         RContextTest RContextTest = run.getBean("RContextTest", RContextTest.class);
 
