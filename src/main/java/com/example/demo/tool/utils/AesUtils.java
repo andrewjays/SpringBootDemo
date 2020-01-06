@@ -10,6 +10,7 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.security.Provider;
 import java.security.SecureRandom;
@@ -136,22 +137,30 @@ public class AesUtils {
     }
 
     public static void main(String[] args) {
-        // 明文
-        String content = "{\n" +
-                "    \"vin\": \"39STATSTESTVIN001\",\n" +
-                "    \"timestamp\": 1558323657,\n" +
-                "    \"sdkVersion\": \"V0.2.1_8e21cdc_1558323578\",\n" +
-                "    \"model\": \"U5\",\n" +
-                "    \"sign\": \"c829c8aba36fac53d7178d9f7e827884\"\n" +
-                "}";
-        String pkey = "f70e300942ea540ed365fe0eb05b5585";
-        System.out.println("待加密报文:" + content);
-        String aesEncryptStr = aesEncryptStr(content, pkey);
-        System.out.println("加密后报文:" + aesEncryptStr);
-        String aesDecodeStr = aesDecodeStr(aesEncryptStr, pkey);
-        System.out.println("解密后报文:" + aesDecodeStr);
-        System.out.println("加解密前后内容是否相等:" + aesDecodeStr.equals(content));
-        String s = "1TNvYuBuw3zRxrs11pAFK+RvFI8jO3jtP12O41MUPtMgJGttqWIH3DopuJuTUNPgB3zZrytHWMrTjyCWlPab8g/7v3AXhyzh9rTLHDPNwTq1yIdWg63wqF/nO7nXVekW";
-        System.out.println(aesDecodeStr(s, "f70e300942ea540ed365fe0eb05b5585"));
+        //        // 明文
+        //        String content = "{\n" +
+        //                "    \"vin\": \"39STATSTESTVIN001\",\n" +
+        //                "    \"timestamp\": 1558323657,\n" +
+        //                "    \"sdkVersion\": \"V0.2.1_8e21cdc_1558323578\",\n" +
+        //                "    \"model\": \"U5\",\n" +
+        //                "    \"sign\": \"c829c8aba36fac53d7178d9f7e827884\"\n" +
+        //                "}";
+        //        String pkey = "f70e300942ea540ed365fe0eb05b5585";
+        //        System.out.println("待加密报文:" + content);
+        //        String aesEncryptStr = aesEncryptStr(content, pkey);
+        //        System.out.println("加密后报文:" + aesEncryptStr);
+        //        String aesDecodeStr = aesDecodeStr(aesEncryptStr, pkey);
+        //        System.out.println("解密后报文:" + aesDecodeStr);
+        //        System.out.println("加解密前后内容是否相等:" + aesDecodeStr.equals(content));
+        //        String s = "1TNvYuBuw3zRxrs11pAFK+RvFI8jO3jtP12O41MUPtMgJGttqWIH3DopuJuTUNPgB3zZrytHWMrTjyCWlPab8g/7v3AXhyzh9rTLHDPNwTq1yIdWg63wqF/nO7nXVekW";
+        //        System.out.println(aesDecodeStr(s, "f70e300942ea540ed365fe0eb05b5585"));
+
+        String path = "123.12"+ File.separator+"asd"+File.separator+"wer"+File.separator+"12eee";
+        int i = path.indexOf(File.separator);
+        String ip = path.substring(0, i);
+        String iconPath1 = path.substring(i);
+
+        System.out.println(ip+"\n"+iconPath1);
+
     }
 }
