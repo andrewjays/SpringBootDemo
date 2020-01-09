@@ -24,6 +24,7 @@ public class CodecUtil {
             throw new RuntimeException(e);
         }
         return buffer;
+
     }
 
     public static void write(SocketChannel channel, String content) {
