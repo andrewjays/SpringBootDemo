@@ -64,14 +64,14 @@ public class NioClient {
             Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
             while (iterator.hasNext()) {
                 SelectionKey key = iterator.next();
-                iterator.remove(); // 移除下面要处理的 SelectionKey
-                // 忽略无效的 SelectionKey
-                if (!key.isValid()) {
-                    continue;
-                }
-
-                handleKey(key);
+            iterator.remove(); // 移除下面要处理的 SelectionKey
+            // 忽略无效的 SelectionKey
+            if (!key.isValid()) {
+                continue;
             }
+
+            handleKey(key);
+        }
         }
     }
 
