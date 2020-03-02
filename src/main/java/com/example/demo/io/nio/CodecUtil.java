@@ -22,6 +22,7 @@ public class CodecUtil {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+
         }
         return buffer;
 
