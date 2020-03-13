@@ -1,10 +1,12 @@
 package com.example.demo.spring.controller;
 
+import com.example.demo.spring.myannotation.Log;
 import com.example.demo.tool.utils.ExcelExportUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,21 +27,24 @@ public class Demo {
     private final static Logger logger = LoggerFactory.getLogger(Demo.class);
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    //@Scheduled(cron = " 0/5 * * * * ? ")
-    public void timePlan() {
-        logger.info("这是一个测试用例");
-        logger.info("现在时间:" + dateFormat.format(new Date()));
-        logger.info("按位与:" + (3 & 5));
-        logger.info("按位或:" + (3 | 5));
-        DecimalFormat df = new DecimalFormat("0.00");
-        Double a = Double.parseDouble(df.format(1l));
-        logger.info("类型转换:" + a);
-        BigDecimal b = new BigDecimal(1L);
-        Double a1 = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-        logger.info("类型转换:" + a1 + "数值类型" + a1.getClass().getName());
-        Double c =1.00D;
-        Double aDouble = Double.valueOf(c);
-        logger.info("打印:"+aDouble);
+    @Scheduled(cron = " 0/1 * * * * ? ")
+    @Log(operationType = "测试", operationName = "zn-test")
+    public String timePlan() {
+        //        logger.info("这是一个测试用例");
+        //        logger.info("现在时间:" + dateFormat.format(new Date()));
+        //        logger.info("按位与:" + (3 & 5));
+        //        logger.info("按位或:" + (3 | 5));
+        //        DecimalFormat df = new DecimalFormat("0.00");
+        //        Double a = Double.parseDouble(df.format(1l));
+        //        logger.info("类型转换:" + a);
+        //        BigDecimal b = new BigDecimal(1L);
+        //        Double a1 = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        //        logger.info("类型转换:" + a1 + "数值类型" + a1.getClass().getName());
+        //        Double c =1.00D;
+        //        Double aDouble = Double.valueOf(c);
+        //        logger.info("打印:"+aDouble);
+
+        return "AOP测试";
     }
 
 

@@ -1,16 +1,12 @@
-package com.example.demo.jdk.test;
-
+package com.example.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * @author Jay
- * @description
- * @date Created in 2020/2/27 5:05 下午
- */
+
+@SpringBootTest()
 public class MyClassLoader  {
 
     private int a =1;

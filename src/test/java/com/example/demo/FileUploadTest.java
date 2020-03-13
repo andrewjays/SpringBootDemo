@@ -31,65 +31,65 @@ import java.util.concurrent.Executors;
 @SpringBootTest
 public class FileUploadTest {
 
-    @Autowired
-    public FastFileStorageClient storageClient;
-
-
-    @Test
-    public void uploadTest() throws Exception {
-
-        CountDownLatch cdl = new CountDownLatch(2);
-        File file1 = new File("D:\\test\\download.txt");
-        ExecutorService cachedThreadPool = Executors.newFixedThreadPool(100);
-        File file = new File("D:\\test\\uploadTest.zip");
-
-        //          ThreadPoolTest.threadPool(cdl,storageClient);
-
-
-        cachedThreadPool.execute(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    // DefaultFastFileStorageClient storageClient = new DefaultFastFileStorageClient();
-
-                    FileInputStream fileInputStream = new FileInputStream(file);
-                    StorePath storePath = storageClient.uploadFile("group1", fileInputStream, file.length(), "zip");
-                    log.info("线程池------------------第{}次上传文件,文件地址:{}", "", storePath.getFullPath());
-
-                    System.out.println("==============" + cdl.getCount());
-                    FileWriter fileWriter = new FileWriter(file1, true);
-                    fileWriter.write(storePath.getFullPath() + "\r\n");
-                    fileWriter.close();
-                    cdl.countDown();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-
-        cdl.await();
-
-        System.out.println("=========end======");
-
-
-    }
-
-    public void checkDownload1(FastFileStorageClient storageClient) throws IOException {
-
-
-        int count = 0;
-        File file = new File("D:\\test\\uploadTest.zip");
-        byte[] b = new byte[1024];
-        FileInputStream fileInputStream = new FileInputStream(file);
-        StorePath storePath = storageClient.uploadFile("group1", fileInputStream, file.length(), "zip");
-        log.info("线程池------------------第{}次上传文件,文件地址:{}", count, storePath.getFullPath());
-        File file1 = new File("D:\\test\\download.txt");
-        FileWriter fileWriter = new FileWriter(file1, true);
-        fileWriter.write(storePath.getFullPath() + "\r\n");
-        fileWriter.close();
-
-    }
+//    @Autowired
+//    public FastFileStorageClient storageClient;
+//
+//
+//    @Test
+//    public void uploadTest() throws Exception {
+//
+//        CountDownLatch cdl = new CountDownLatch(2);
+//        File file1 = new File("D:\\test\\download.txt");
+//        ExecutorService cachedThreadPool = Executors.newFixedThreadPool(100);
+//        File file = new File("D:\\test\\uploadTest.zip");
+//
+//        //          ThreadPoolTest.threadPool(cdl,storageClient);
+//
+//
+//        cachedThreadPool.execute(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    // DefaultFastFileStorageClient storageClient = new DefaultFastFileStorageClient();
+//
+//                    FileInputStream fileInputStream = new FileInputStream(file);
+//                    StorePath storePath = storageClient.uploadFile("group1", fileInputStream, file.length(), "zip");
+//                    log.info("线程池------------------第{}次上传文件,文件地址:{}", "", storePath.getFullPath());
+//
+//                    System.out.println("==============" + cdl.getCount());
+//                    FileWriter fileWriter = new FileWriter(file1, true);
+//                    fileWriter.write(storePath.getFullPath() + "\r\n");
+//                    fileWriter.close();
+//                    cdl.countDown();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//
+//
+//        cdl.await();
+//
+//        System.out.println("=========end======");
+//
+//
+//    }
+//
+//    public void checkDownload1(FastFileStorageClient storageClient) throws IOException {
+//
+//
+//        int count = 0;
+//        File file = new File("D:\\test\\uploadTest.zip");
+//        byte[] b = new byte[1024];
+//        FileInputStream fileInputStream = new FileInputStream(file);
+//        StorePath storePath = storageClient.uploadFile("group1", fileInputStream, file.length(), "zip");
+//        log.info("线程池------------------第{}次上传文件,文件地址:{}", count, storePath.getFullPath());
+//        File file1 = new File("D:\\test\\download.txt");
+//        FileWriter fileWriter = new FileWriter(file1, true);
+//        fileWriter.write(storePath.getFullPath() + "\r\n");
+//        fileWriter.close();
+//
+//    }
 
 
 }

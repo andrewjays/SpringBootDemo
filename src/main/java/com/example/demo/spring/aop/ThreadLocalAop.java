@@ -1,5 +1,6 @@
 package com.example.demo.spring.aop;
 
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
@@ -16,8 +17,9 @@ public class ThreadLocalAop {
     /**
      * 定义AOP扫描路径
      */
-    @Pointcut("execution(* com.example.demo.spring.controller..*.*(..))")
+    // @Pointcut("execution(* com.example.demo.spring.controller..*.*(..))")
     public void log() {
+
     }
 
 
@@ -26,9 +28,10 @@ public class ThreadLocalAop {
      *
      * @param object
      */
-   // @AfterReturning(returning = "object", pointcut = "log()")
+    //@AfterReturning(returning = "object", pointcut = "log()")
     public void doAfterReturn(Object object) {
 
+        System.out.println("aop测试：" + object);
 
     }
 }

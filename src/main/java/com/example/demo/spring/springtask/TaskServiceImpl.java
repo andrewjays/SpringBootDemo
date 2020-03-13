@@ -14,8 +14,8 @@ import java.util.Date;
  * @description
  * @date Created in 2019/11/26 17:10
  */
-@Service
-@EnableScheduling
+//@Service
+//@EnableScheduling
 public class TaskServiceImpl implements SchedulingConfigurer {
 
     public void cacheTask(ScheduledTaskRegistrar taskRegistrar, int i) {

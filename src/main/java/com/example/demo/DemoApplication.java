@@ -15,8 +15,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 //@EnableZipkinServer
-@EnableWebSocket
-@EnableEurekaServer
+//@EnableWebSocket
+//@EnableEurekaServer
 @ServletComponentScan
 @SpringBootApplication
 @EnableSwagger2
