@@ -128,6 +128,7 @@ public class LambdaTest {
     @Test
     public void test2() {
         String str = getvalue("hello world", x -> x.toUpperCase());
+       // String str = getvalue("hello world", String::toUpperCase);
         System.out.print(str);
 
     }

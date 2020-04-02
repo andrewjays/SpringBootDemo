@@ -56,15 +56,11 @@ public class OptionalTest {
     @Test
     public void test3() {
         Optional<Object> op = Optional.ofNullable(null);
-        if (op.isPresent()) {
-            System.out.println(op.get());
-        } else {
-            // 如果没值，传入默认的值
-            op.orElse(new Employee());
-            // 函数式接口，可以写更多
-            Object o = op.orElseGet(Employee::new);
-            System.out.println(o);
-        }
+        // 如果没值，传入默认的值
+        op.orElse(new Employee());
+        // 函数式接口，可以写更多
+        Object o = op.orElseGet(Employee::new);
+        System.out.println(o);
     }
 
 
