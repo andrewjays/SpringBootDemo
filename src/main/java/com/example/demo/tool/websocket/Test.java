@@ -2,6 +2,8 @@ package com.example.demo.tool.websocket;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 import java.net.URI;
 
@@ -23,6 +25,8 @@ public class Test {
         Thread.sleep(3000);
         log.info("已连接成功");
         myClient.send("测试连接");
+
+        CloseableHttpClient httpclient = HttpClients.createDefault();
 
     }
 }

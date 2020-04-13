@@ -1,5 +1,6 @@
 package com.example.demo.jdk.jdk8;
 
+import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 
 
@@ -338,7 +339,13 @@ public class StreamTest {
     }
 
     public static void main(String[] args) {
-        
+
+        String a = "[\"a\"]";
+
+        List<String> parse = (List<String>) JSON.parse(a);
+        System.out.println(parse.size());
+        System.out.println(parse.get(0));
+
     }
 
 }
