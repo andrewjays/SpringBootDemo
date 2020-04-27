@@ -33,6 +33,7 @@ public class BlockedQueue<T> {
             while (a > 1) {
                 // 等待队列不满
                 notFull.await();
+                notFull.signalAll();
             }
             // 省略入队操作...
             // 入队后, 通知可出队
@@ -48,6 +49,7 @@ public class BlockedQueue<T> {
      * 出队
      */
     void deq() {
+
         lock.lock();
         try {
             while (a < 1) {
